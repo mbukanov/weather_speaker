@@ -3,7 +3,7 @@
 from weather_class import Weather
 from speech_class import YandexSpeech
 
-api_key = ""; 
+api_key = ""
 
 condition_translate = {
 	"clear": "ясно",
@@ -53,13 +53,13 @@ def main():
 	speech = YandexSpeech(api_key, speaker="oksana");
 	weather_res = weather.getWeather();
 	text = "";
-	text += "; Температура на улице "+str(weather_res["temperature"]);
-	text += "; Действительно температура ощущается как " + str(weather_res["feels_like"]);
-	text += "; Скорость ветра "+str(weather_res["wind_speed"]);
-	text += "; На улице "+str(condition_translate[weather_res["condition"]]);
-	text += "; "+str(season_translate[weather_res["season"]]);
-	text += "; "+prec_translate[weather_res["prec_type"]];
-	text += "; "+cloudness_translate[weather_res["cloudness"]];
+	text += "; Температура на улице "+str(weather_res["temperature"])+".";
+	text += "; Действительно температура ощущается как " + str(weather_res["feels_like"])+".";
+	text += "; Скорость ветра "+str(weather_res["wind_speed"])+".";
+	text += "; На улице "+str(condition_translate[weather_res["condition"]])+".";
+	text += "; "+str(season_translate[weather_res["season"]])+".";
+	text += "; "+prec_translate[weather_res["prec_type"]]+".";
+	text += "; "+cloudness_translate[weather_res["cloudness"]]+".";
 
 	text += "; Желаю хорошо дня!";
 	speech.makeVoiceFile(text);
